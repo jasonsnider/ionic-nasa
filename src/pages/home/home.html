@@ -10,7 +10,7 @@
 
   <div *ngIf="apod">
 
-    <button *ngIf="date">Next</button>
+    <button ion-button full (click)="randomApod();">Next</button>
 
     <h1 id="apodTitle">{{ apod.title }}</h1>
 

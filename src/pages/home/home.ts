@@ -10,7 +10,6 @@ import { Apod } from '../../apod';
 })
 export class HomePage {
   apod: Apod;
-  date: string;
 
   constructor(
     public navCtrl: NavController,
@@ -46,6 +45,14 @@ export class HomePage {
   getApod(date:string=''):void {
     this.apodProvider.getApod(date)
       .subscribe(apod => this.apod = apod);
+  }
+
+  randomApod(): void{
+    let date = this.randomDate(
+      new Date(1995,5,16),
+      new Date()
+    );
+    this.getApod(date);
   }
 
 }
